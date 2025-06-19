@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background-image: url('./mountain.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 40px;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .test-name {
+            width: 100%;
+            max-width: 600px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 0 30px;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .test-name::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .question-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .add-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 80%;
+        }
+
+        .add-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 100%;
+        }
+
+        .question-input {
+            flex: 1;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 0 30px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .question-input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .field-type {
+            width: 250px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 0 30px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .image-input {
+            width: 200px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 0 30px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .image-input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .done-button {
+            margin-left: 89%;
+            bottom: 60px;
+            right: 90px;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .done-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        option {
+            color: #515151;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><a href="./main_page.html" style="text-decoration: none; color: white;">TestQuest</a></h1>
+            <h1 style="font-size: 30px;">Creating a test</h1>
+        </div>
+
+        <input type="text" class="test-name" placeholder="Test name...">
+
+        <div class="question-row">
+            <button class="add-button" onclick="addQuestionRow()">
+                <img src="./plus.png" alt="Add" width="25" height="25">
+            </button>
+            <input type="text" class="question-input" placeholder="Title of the question...">
+            <select class="field-type">
+                <option value="" disabled selected>Type of field...</option>
+                <option value="social">Social media</option>
+                <option value="friends">Friends/Acquaintances</option>
+            </select>
+            <input type="text" class="image-input" placeholder="Image...">
+        </div>
+
+        <button class="done-button">Done</button>
+    </div>
+
+    <script>
+        function addQuestionRow() {
+            const container = document.querySelector('.container');
+            const doneButton = document.querySelector('.done-button');
+            const newRow = document.createElement('div');
+            newRow.className = 'question-row';
+            
+            newRow.innerHTML = `
+                <button class="add-button" onclick="addQuestionRow()">
+                    <img src="./plus.png" alt="Add" width="25" height="25">
+                </button>
+                <input type="text" class="question-input" placeholder="Title of the question...">
+                <select class="field-type">
+                    <option value="" disabled selected>Type of field...</option>
+                    <option value="social">Social media</option>
+                    <option value="friends">Friends/Acquaintances</option>
+                </select>
+                <input type="text" class="image-input" placeholder="Image...">
+            `;
+            
+            container.insertBefore(newRow, doneButton);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(./mountain.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+        .wrapper {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 50px;    
+        }
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: "Poppins", serif;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: normal;
+            gap: 80px;
+        }
+        .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .support-text {
+            text-decoration: none;
+            color: white; 
+            font-size: 30px;
+        }
+        .support-text:hover {
+            color: rgb(168, 168, 168);
+        }
+        button {
+            width: 200px;
+            background-color: #d9d9d9;
+            height: 50px;
+            border-radius: 100px;
+            font-family: "Poppins", serif;
+            font-size: 28px;
+            font-weight: 600;
+            font-style: normal;
+            border: none;
+            color: #515151;
+        }
+        button:hover {
+            background-color: #afafaf;
+        }
+        .switch-button {
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d9d9d9;
+            height: 50px;
+            border-radius: 100px;
+            font-family: "Poppins", serif;
+            font-size: 28px;
+            font-weight: 600;
+            font-style: normal;
+            border: none;
+            color: #515151;
+        }
+        .switch-button:hover {
+            background-color: #afafaf;
+        }
+
+
+        main{
+            display: block;
+        }
+        .search {
+            background-color: none;
+            width: 100%;
+            height: 80px;
+            border: 7px #d9d9d9 solid;
+            border-radius: 100px;
+            font-family: "Poppins", serif;
+            font-size: 30px;
+            font-weight: 600;
+            font-style: normal;
+            color: #515151;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 40px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+        input {
+            color: #515151;
+            font-family: "Poppins", serif;
+            font-size: 30px;
+            font-weight: 600;
+            font-style: normal;
+            margin-left: 30px;
+            background-color: transparent;
+            border: none;
+            width: 970px;
+        }
+        input:focus {
+            outline: none;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        .test {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .type-tests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .test-image {
+            width: 351px;
+            height: 170px;
+            border: 7px grey solid;
+            border-radius: 45px;
+        }
+        .test-image:hover {
+            border: 7px rgb(194, 194, 194) solid;
+        }
+        .test-title {
+            text-decoration: none;
+            color: white;
+            font-family: "Poppins", serif;
+            font-size: 18px;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+
+
+
+
+        footer {
+            margin: 0;
+            background-color: #232323;
+            height: 120px;
+            width: 100%;
+            color: white;
+            font-family: "Poppins", serif;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+        }
+        
+        .social {
+            display: flex;
+            gap: 30px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+        .tech {
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tech-image {
+            width: 60px;
+            height: 60px;
+        }
+        .tech-text {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .tech-text:hover {
+            color: rgb(168, 168, 168);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="right">
+                <h1><a href="" style="text-decoration: none; color: white;">TestQuest</a></h1>
+                <h1><a href="./support.html" class="support-text">Support</a></h1>
+            </div>
+            <div class="left">
+                <a href="./login.html" style="text-decoration: none; color: #515151;" class="switch-button">Login</a>
+                <a href="./registration.html" style="text-decoration: none; color: #515151;" class="switch-button">Sign up</a>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="search">
+                <input type="text" placeholder="Look for your next task...">
+                <button style="margin-right: 10px;">Search</button>
+            </div>
+            <div class="container">
+                <div class="type-tests">
+                    <div class="test test1">
+                        <img src="./file.png" alt="" class="test-image">
+                        <span><a href="" class = "test-title">What kind of secret CIA file are you?</a></span>
+                    </div>
+                    <div class="test test2">
+                        <img src="./microwave.png" alt="" class="test-image">
+                        <span><a href="" class = "test-title">What kind of microwave are you?</a></span>
+                    </div>
+                    <div class="test test3">
+                        <img src="./tyson.png" alt="" class="test-image">
+                        <span><a href="" class="test-title">What kind of Tyson are you?</a></span>
+                    </div>
+                    <div class="test test4">
+                        <img src="./skeleton.png" alt="" class="test-image">
+                        <span><a href="" class = "test-title">What kind of skeleton are you?</a></span>
+                    </div>
+                    <div class="test test5">
+                        <img src="./putin.png" alt="" class="test-image">
+                        <span><a href="" class = "test-title">What kind of Putin are you?</a></span>
+                    </div>
+                    <div class="test test6">
+                        <img src="./ronnie.png" alt="" class="test-image">
+                        <span><a href="" class = "test-title">What kind of “Yeah buddy!” are you?</a></span>
+                    </div>
+                </div>
+                <a href=""><img src="./arrow-light.png" alt="" style="width: 70px;"></a>
+            </div>
+        </main>
+    </div>
+
+
+        <footer>
+            <div class="main-footer">
+                <h1 style="color: white; opacity: 100%; font-size: 40px;font-weight: 700;">TestQuest</h1>
+                <div class="tech">
+                    <a href="./support.html"><img src="./tech.png" alt="" class="tech-image"></a>
+                    <a href="./support.html" style="text-decoration: none;"><span class="tech-text">tech support</span></a>
+                </div>
+                <div class="social">
+                    <a href=""><img src="./telegram.png" alt="" class="icon"></a>
+                    <a href=""><img src="./gmail.png" alt="" class="icon"></a>
+                    <a href=""><img src="./whatsapp.png" alt="" class="icon"></a>
+                    <a href=""><img src="./inst.png" alt="" class="icon"></a>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+</html>
